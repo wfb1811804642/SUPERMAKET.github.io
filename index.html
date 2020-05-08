@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SUPER MARKET</title>
+		<link rel="stylesheet" href="css/style.css" /><!--将这个复制-->
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+				text-decoration: none;
+				color: #000000;
+			}
+			.heard{
+				width: 100%;
+				height: 200px;
+			}
+			.heard-top{
+				width: 100%;
+				height: 50px;
+				background-color: #000000;
+			}
+			.heard-top div{
+				width: 1200px;
+				height: 50px;
+				margin: auto;
+				/*border: 1px solid white;*/
+			}
+			.heard-top div img{
+				width: 200px;
+				height: 50px;
+				float: left;
+			}
+			.heard-top div ul li a{
+				width: 100px;
+				height: 50px;
+				float: right;
+				color: #FFFFFF;
+				line-height: 50px;
+				text-align: center;
+			}
+			.heard-top div ul li:hover a{
+				color: #FE9126;
+				transition: all 1s;
+			}
+			/*顶部黑色导航栏*/
+			.heard-cen{
+				width: 100%;
+				height: 100px;
+				background-color: white;
+			}
+			.heard-cen div{
+				width: 1200px;
+				height:100px;
+				/*border: 1px solid;*/
+				position: relative;
+				margin: auto;
+			}
+			.heard-cen div h1{
+				margin: auto;
+				width: 500px;
+				height: 100px;
+				font-size: 50px;
+				line-height: 100px;
+				color: #FE9126;
+			}
+			.heard-cen div input{
+				width: 250px;
+				height: 40px;
+				font-size: 30px;
+				position:absolute;
+				top: 30px;
+				right: 70px;
+			}
+			.heard-cen div span{
+				width: 40px;
+				height: 40px;
+				float: right;
+				position: absolute;
+				top: 30px;
+				right:20px;
+				border: 1px solid;
+				background-position-x: -12px;
+				background-position-y: 53px;
+				background-image:url(img/sousuo.png) ;
+			}
+			.heard-cen div span:hover{
+				background-image: url(img/sss.png);
+			}
+			/*中间白色导航带搜索框*/
+			.heard-bot{
+				width: 100%;
+				height: 50px;
+				background-color: #FE9126;
+			}
+			.h-b-d{
+				width: 1200px;
+				height:50px;
+				margin: auto;
+				/*border: 1px solid;*/
+				position: relative;
+			}
+			.index{
+				width: 200px;
+				height: 50px;
+				float: left;
+				line-height: 50px;
+				text-align: center;
+				/*border: 1px solid;*/
+			}
+			.one{
+				width:200px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				float: left;
+				cursor: pointer;
+				/*border: 1px solid;*/
+			}
+			.two{
+				display: none;
+				width: 200px;
+				height: 250px;
+				background-color: white;
+				z-index: 4;
+				position: relative;
+				box-shadow: 0px 0px 5px;
+				/*border: 1px solid;*/
+			}
+			.two ol li a{
+				width: 200px;
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				display: block;
+				color: #999999;
+			}
+			.two ol li:hover a{
+				color: #FE9126;
+				box-shadow: 0px 0px 5px;
+			}
+			.one:hover .two{
+				display: block;
+			}
+			/*导航栏结束可以复制*/
+			#lunbo{
+				width:100%;
+				height:500px;
+				/*border: 1px solid;*/
+				margin: auto;
+			}
+			.body-c{
+				width: 100%;
+				height: 1200px;
+				background-color: aliceblue;
+				position:relative;
+			}
+			.body-c-1{
+				width: 1200px;
+				height: 50px;
+				line-height: 50px;
+				font-size: 40px;
+				text-align: center;
+				margin: auto;
+				/*border: 1px solid;*/
+				position: relative;
+				top: 80PX;
+			}
+			.body-c-b{
+				width: 1200px;
+				height: 1000px;
+				margin: auto;
+				/*border: 1px solid;*/
+				position: relative;
+				top: 100PX;
+			}/*中间的div，今日推荐，图文混排*/
+			.jrtj{
+				width: 350px;
+				height: 450px;
+				margin: 24px;
+				text-align: center;
+				float: left;
+				background-color: white;
+				border: 1px solid #999999;
+			}
+			.gm{
+				width: 230px;
+				height: 40px;
+				border: 1px solid gainsboro;
+				margin: auto;
+				text-align: center;
+				line-height: 40PX;
+				background-color:skyblue;
+				border-radius:20px ;
+			}
+			.gm a{
+				display: block;
+			}
+			.jrtj:hover .gm{
+				background-color:#FE9126;
+				transition: all .6s;
+				
+			}
+			.jrtj img{
+				width: 90%;
+				height: 60%;
+				margin-top: 20px;
+			}
+			.jrtj h4{
+				line-height: 40px;
+				font-size: 30px;
+			}
+			.jrtj span{
+				line-height: 50px;
+			}
+			.xj{
+				color:red;
+				font-size: 30px;
+			}
+			/*图文混排今日特卖结束*/
+			.body-cen{
+				width: 100%;
+				height: 470px;
+				position: relative;
+			}
+			.body-cen img{
+				width: 100%;
+				height: 100%;
+			}
+			.a:hover .lszq{
+				transform: scale(1);
+				transition: all 1s;
+			}
+			.lszq{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0px;
+				transform: scale(0);
+				z-index: 111;
+			}
+			.lszq h1{
+				width: 100%;
+				height: 470px;
+				text-align: center;
+				line-height: 470px;
+				font-size: 70px;
+				color: orange;
+			}
+			
+			.lingshi{
+				width: 1200px;
+				height: 650px;
+				margin: auto;
+				margin-top: 30px;
+				/*border: 1px solid;*/
+				position: relative;
+			}
+			.lingshi-a{
+				width: 630px;
+				height:300px;
+				margin: 20px;
+				overflow:hidden;
+				position: relative;
+			}
+			.lingshi-a img{
+				width: 100%;
+				height: 100%;
+			}
+			.lingshi-a h1{
+				width: 100%;
+				height: 100%;
+				line-height: 300px;
+				text-align: center;
+				background-color: rgba(0,0,0,.7);
+				position: absolute;
+				top: 0px;
+				font-size: 50px;
+				color: white;
+				transform:scale(0);
+			}
+			.lingshi-a:hover h1{
+				transform: scale(1);
+				transition: all 1s;
+			}
+			.lingshi-a:hover img{
+				transform: scale(1.2);
+				transition: all 1s;
+			}
+			.lingshi-b{
+				width: 300px;
+				height:300px;
+				margin: 20px;
+				overflow:hidden;
+				position: relative;
+			}
+			.lingshi-b img{
+				width: 100%;
+				height: 100%;
+			}
+			.lingshi-b h2{
+				width: 100%;
+				height: 100%;
+				line-height: 300px;
+				text-align: center;
+				background-color: rgba(0,0,0,.3);
+				position: absolute;
+				top: 0px;
+				font-size: 50px;
+				color: white;
+				transform:scale(0);
+			}
+			.lingshi-b:hover h2{
+				transform: scale(1);
+				transition: all 1s;
+			}
+			.lingshi-b:hover img{
+				transform: scale(1.2);
+				transition: all 1s;
+			}
+			.lingshi-c{
+				width: 300px;
+				height:300px;
+				overflow:hidden;
+				position:absolute;
+				top: 320px;
+				left: 350px;
+			}
+			.lingshi-c img{
+				width: 100%;
+				height: 100%;
+			}
+			.lingshi-c h3{
+				width: 100%;
+				height: 100%;
+				line-height: 300px;
+				text-align: center;
+				background-color: rgba(0,0,0,.3);
+				position: absolute;
+				top: 0px;
+				font-size: 50px;
+				color: white;
+				transform:scale(0);
+			}
+			.lingshi-c:hover h3{
+				transform: scale(1);
+				transition: all 1s;
+			}
+			.lingshi-c:hover img{
+				transform: scale(1.2);
+				transition: all 1s;
+			}
+			.lingshi-d{
+				width: 500px;
+				height:620px;
+				overflow:hidden;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
+			.lingshi-d img{
+				width: 100%;
+				height: 100%;
+			}
+			.lingshi-d h4{
+				width: 100%;
+				height: 100%;
+				line-height: 620px;
+				text-align: center;
+				background-color: rgba(0,0,0,.7);
+				position: absolute;
+				top: 0px;
+				font-size: 50px;
+				color: white;
+				transform:scale(0);
+			}
+			.lingshi-d:hover h4{
+				transform: scale(1);
+				transition: all 1s;
+			}
+			.lingshi-d:hover img{
+				transform: scale(1.2);
+				transition: all 1s;
+			}
+			
+			
+			
+			/*零食推荐*/
+			.xptj-bt{
+				width: 1200px;
+				height:100px;
+				margin: auto;
+				/*border: 1px solid;*/
+				text-align: center;
+				line-height:100px;
+				font-size: 40px;
+				margin-top: 30px;
+			}
+			.body-bot{
+				width: 100%;
+				height: 540px;
+				background-color: aliceblue;
+			}
+			.body-bot-1{
+				width: 1200px;
+				height: 420px;
+				margin: auto;
+				/*border: 1px solid;*/
+			}
+			.xptj{
+				width: 300px;
+				height:380px;
+				margin: 24px;
+				margin-left: 60px;
+				text-align: center;
+				float: left;
+				background-color: white;
+				border: 1px solid #999999;
+			}
+			.xptj img{
+				width: 90%;
+				height: 60%;
+				margin-top: 20px;
+			}
+			.xptj:hover .gm{
+				background-color:#FE9126;
+				transition: all .6s;
+				box-shadow: 0px 0px 5px;
+			}
+			.bottom{
+				width: 100%;
+				height: 300px;
+				text-align: center;
+				background-color: #2B2A2A;
+			}
+			.bottom img{
+				width: 400px;
+				height:90px;
+				margin-top: 100px;
+			}
+			.bottom a{
+				width: 100%;
+				min-height: 50px;
+				line-height: 50px;
+				text-align: center;
+				color: white;
+				display: block;
+			}
+			.arrow{
+				width:32px ;
+				height: 32px;
+				background-image: url(img/arrow.png);
+				position: fixed;
+				top: 90%;
+				right: 20px;
+				z-index: 11;
+			}
+		</style>
+	</head>
+	<!--
+    	作者：王风宝
+    	时间：2019-11-22
+    	描述：超级市场首页
+    -->
+	<body>
+		<a href="#DINGBU" class="arrow"></a>
+		<div id="max">
+			<div class="heard"><!--顶部导航-->
+				<div class="heard-top">
+					<div>
+						<img src="img/logo.png" /><a name="DINGBU">
+						<ul>
+							<li><a href="购物车（2）.html">购物车</a></li>
+							<li><a href="登录（2）.html">登录</a></li>
+							<li><a href="注册（2）.html">注册</a></li>
+							<li><a href="关于（2）.html">关于</a></li>
+						</ul></a>
+					</div>
+				</div><!--顶部黑色-->
+				<div class="heard-cen">
+					<div>
+						<h1>SUPER MARKET</h1>
+						<input type="text" />
+						<span></span>
+					</div>
+				</div>
+				<div class="heard-bot">
+					<div class="h-b-d">
+						<ul>
+							<li class="index"><a href="index.html">首页</a></li>
+							<li class="one">
+								<p>水果</p>
+								<div class="two">
+									<ol>
+										<li><a href="水果(2).html">春季水果</a></li>
+										<li><a href="水果(2).html">夏季水果</a></li>
+										<li><a href="水果(2).html">冬季水果</a></li>
+										<li><a href="水果(2).html">秋季水果</a></li>
+									</ol>
+								</div>
+							</li>
+							<li class="one">
+								<p>蔬菜</p>
+								<div class="two">
+									<ol>
+										<li><a href="蔬菜.html">青菜</a></li>
+										<li><a href="蔬菜.html">干菜</a></li>
+										<li><a href="蔬菜.html">肉类</a></li>
+										<li><a href="蔬菜.html">海鲜</a></li>
+									</ol>
+								</div>
+							</li>
+							<li class="one">
+								<p>零食</p>
+								<div class="two">
+									<ol>
+										<li><a href="零食（2）.html">坚果</a></li>
+										<li><a href="零食（2）.html">辣条</a></li>
+										<li><a href="零食（2）.html">饼干</a></li>
+										<li><a href="零食（2）.html">干果</a></li>
+									</ol>
+								</div>
+							</li>
+							<li class="one">
+								<p>生活用品</p>
+								<div class="two">
+									<ol>
+										<li><a href="生活用品（2）.html">餐具</a></li>
+										<li><a href="生活用品（2）.html">家具</a></li>
+										<li><a href="生活用品（2）.html">卫浴</a></li>
+										<li><a href="生活用品（2）.html">服饰</a></li>
+									</ol>
+								</div>
+							</li>
+							<li class="one">
+								<a href="每日推荐2.html">每日特价</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--顶部导航结束-->
+			<div id="lunbo">
+					<!--开始复制-->
+					<div class="c-banner">
+						<div class="banner">
+							<ul>
+								<li><img src="img/index/轮播1.png"></li>
+								<li><img src="img/index/轮播2.png"></li>
+								<li><img src="img/index/轮播3.png"></li>
+							</ul>
+						</div>
+						<div class="nexImg">
+							<img src="img/nexImg.png" />
+						</div>
+						<div class="preImg">
+							<img src="img/preImg.png" />
+						</div>
+						<div class="jumpBtn">
+							<ul>
+								<li jumpImg="0"></li>
+								<li jumpImg="1"></li>
+								<li jumpImg="2"></li>
+							</ul>
+						</div>
+					</div>
+					<!--结束复制-->
+			</div>
+			<div id="body1">
+				<div class="body-c">
+					<h1 class="body-c-1">今日热卖</h1>
+					<div class="body-c-b">
+						<div class="jrtj">
+							<img src="img/index/三只松鼠礼包.jpg" />
+							<h4>三只松鼠坚果礼包</h4>
+							<span></span><span class="xj">￥44.9</span>
+							<div class="gm">
+								<a href="三只松鼠（3）.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="jrtj">
+							<img src="img/index/979403215.jpg" />
+							<h4>百事可乐</h4>
+							<span></span><span class="xj">￥8</span>
+							<div class="gm">
+								<a href="可乐大礼包.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="jrtj">
+							<img src="img/index/-231992540.jpg" />
+							<h4>水果大礼包</h4>
+							<span></span><span class="xj">￥89</span>
+							<div class="gm">
+								<a href="水果大礼包.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="jrtj">
+							<img src="img/index/-360561232.jpg" />
+							<h4>薯片</h4>
+							<span></span><span class="xj">￥15</span>
+							<div class="gm">
+								<a href="薯片大礼包.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="jrtj">
+							<img src="img/index/-1167133904.jpg" />
+							<h4>五谷杂粮</h4>
+							<span></span><span class="xj">￥118</span>
+							<div class="gm">
+								<a href="五谷大礼包.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="jrtj">
+							<img src="img/index/苹果.jpg" />
+							<h4>红富士苹果</h4>
+							<span></span><span class="xj">￥5.9</span>
+							<div class="gm">
+								<a href="苹果3.html">GOUMAI</a>
+							</div>
+						</div>
+					</div><!--图文混排-->
+				</div>
+				<!--图文混排今日特卖结束-->
+				<div class="body-cen">
+					<a href="零食（2）.html">
+						<div class="a">
+							<img src="img/index/b1.jpg"/>
+							<div class="lszq">
+								<h1>零食专区</h1>
+							</div>
+						</div>
+					</a>
+				<div class="lingshi">
+					<div class="lingshi-a">
+						<a href="薯片大礼包.html">
+							<img src="img/index/零食a.png" />
+							<h1>薯片大礼包</h1>
+						</a>
+					</div>
+					<div class="lingshi-b">
+						<a href="水果大礼包.html">
+							<img src="img/index/零食b.png" />
+							<h2>水果大礼包</h1>
+						</a>
+					</div>
+					<div class="lingshi-c">
+						<a href="五谷大礼包.html">
+							<img src="img/index/零食c.png" />
+							<h3>五谷大礼包</h1>
+						</a>
+					</div>
+					<div class="lingshi-d">
+						<a href="可乐大礼包.html">
+							<img src="img/index/零食d.png" />
+							<h4>可乐大礼包</h1>
+						</a>
+					</div>
+				</div>
+				<!--零食推荐-->
+				<div class="body-bot">
+					<h1 class="xptj-bt">新品推荐</h1>
+					<div class="body-bot-1">
+						<div class="xptj">
+							<img src="img/fruit/草莓.JPG" />
+							<h4>草莓</h4>
+							<span></span><span class="xj">￥9.9</span>
+							<div class="gm">
+								<a href="草莓3.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="xptj">
+							<img src="img/index/苹果.jpg" />
+							<h4>红富士苹果</h4>
+							<span></span><span class="xj">￥3.9</span>
+							<div class="gm">
+								<a href="苹果3.html">GOUMAI</a>
+							</div>
+						</div>
+						<div class="xptj">
+							<img src="img/index/三只松鼠礼包.jpg" />
+							<h4>三只松鼠</h4>
+							<span></span><span class="xj">￥59.9</span>
+							<div class="gm">
+								<a href="三只松鼠（3）.html">GOUMAI</a>
+							</div>
+						</div>
+					</div>
+				</div><!--今日推荐-->
+				<div class="bottom">
+					<img src="img/logo2.png" />
+					<a href="#DINGBU">返回顶部</a>
+				</div>
+			</div>
+		</div><!--max-->
+	</body>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+//定时器返回值
+var time=null;
+//记录当前位子
+var nexImg = 0;
+//用于获取轮播图图片个数
+var imgLength = $(".c-banner .banner ul li").length;
+//当时动态数据的时候使用,上面那个删除
+// var imgLength =0;
+//设置底部第一个按钮样式
+$(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+
+//页面加载
+$(document).ready(function(){
+	// dynamicData();
+	//启动定时器,设置时间为3秒一次
+	time =setInterval(intervalImg,3000);
+});
+
+//点击上一张
+$(".preImg").click(function(){
+	//清楚定时器
+	clearInterval(time);
+	var nowImg = nexImg;
+	nexImg = nexImg-1;
+	console.log(nexImg);
+	if(nexImg<0){
+		nexImg=imgLength-1;
+	}
+	//底部按钮样式设置
+	$(".c-banner .jumpBtn ul li").css("background-color","white");
+	$(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+	
+	//将当前图片试用绝对定位,下一张图片试用相对定位
+	$(".c-banner .banner ul img").eq(nowImg).css("position","absolute");
+	$(".c-banner .banner ul img").eq(nexImg).css("position","relative");
+	
+	//轮播淡入淡出
+	$(".c-banner .banner ul li").eq(nexImg).css("display","block");
+	$(".c-banner .banner ul li").eq(nexImg).stop().animate({"opacity":1},1000);
+	$(".c-banner .banner ul li").eq(nowImg).stop().animate({"opacity":0},1000,function(){
+		$(".c-banner ul li").eq(nowImg).css("display","none");
+	});
+	
+	//启动定时器,设置时间为3秒一次
+	time =setInterval(intervalImg,3000);
+})
+
+//点击下一张
+$(".nexImg").click(function(){
+	clearInterval(time);
+	intervalImg();
+	time =setInterval(intervalImg,3000);
+})
+
+//轮播图
+function intervalImg(){
+	if(nexImg<imgLength-1){
+		nexImg++;
+	}else{
+		nexImg=0;
+	}
+	
+	//将当前图片试用绝对定位,下一张图片试用相对定位
+	$(".c-banner .banner ul img").eq(nexImg-1).css("position","absolute");
+	$(".c-banner .banner ul img").eq(nexImg).css("position","relative");
+	
+	$(".c-banner .banner ul li").eq(nexImg).css("display","block");
+	$(".c-banner .banner ul li").eq(nexImg).stop().animate({"opacity":1},1000);
+	$(".c-banner .banner ul li").eq(nexImg-1).stop().animate({"opacity":0},1000,function(){
+		$(".c-banner .banner ul li").eq(nexImg-1).css("display","none");
+	});
+	$(".c-banner .jumpBtn ul li").css("background-color","white");
+	$(".c-banner .jumpBtn ul li[jumpImg="+nexImg+"]").css("background-color","black");
+}
+
+//轮播图底下按钮
+//动态数据加载的试用应放在请求成功后执行该代码,否则按钮无法使用
+$(".c-banner .jumpBtn ul li").each(function(){
+	//为每个按钮定义点击事件
+	$(this).click(function(){
+		clearInterval(time);
+		$(".c-banner .jumpBtn ul li").css("background-color","white");
+		jumpImg = $(this).attr("jumpImg");
+		if(jumpImg!=nexImg){
+			var after =$(".c-banner .banner ul li").eq(jumpImg);
+			var befor =$(".c-banner .banner ul li").eq(nexImg);
+			
+			//将当前图片试用绝对定位,下一张图片试用相对定位
+			$(".c-banner .banner ul img").eq(nexImg).css("position","absolute");
+			$(".c-banner .banner ul img").eq(jumpImg).css("position","relative");
+			
+			after.css("display","block");
+			after.stop().animate({"opacity":1},1000);
+			befor.stop().animate({"opacity":0},1000,function(){
+				befor.css("display","none");
+			});
+			nexImg=jumpImg;
+		}
+		$(this).css("background-color","black");
+		time =setInterval(intervalImg,3000);
+	});
+});
+
+	//动态数据轮播图
+	//动态数据加载的时候不要直接点击demo.html运行否则可能请求不到本地json数据
+// function dynamicData(){
+// 	$.ajax({
+// 		url:"js/test.json",
+// 		type:"get",
+// 		dataType:"json",
+// 		success:function(data){
+// 			if(data.code==1){
+// 				var data = data.data;
+// 				$.each(data,function(i){
+// 					$(".c-banner .banner ul").append('<li><img src="'+this.img+'"></li>');
+// 					$(".c-banner .jumpBtn ul").append('<li jumpImg="'+i+'"></li>')
+// 				})
+// 			}
+// 			//获取图片总数量
+// 			imgLength = $(".c-banner .banner ul li").length;
+// 			//为底部按钮定义单击事件
+// 			$(".c-banner .jumpBtn ul li").each(function(){
+// 				//为每个按钮定义点击事件
+// 				$(this).click(function(){
+// 					clearInterval(time);
+// 					$(".c-banner .jumpBtn ul li").css("background-color","white");
+// 					jumpImg = $(this).attr("jumpImg");
+// 					if(jumpImg!=nexImg){
+// 						var after =$(".c-banner .banner ul li").eq(jumpImg);
+// 						var befor =$(".c-banner .banner ul li").eq(nexImg);
+// 						
+// 						//将当前图片试用绝对定位,下一张图片试用相对定位
+// 						$(".c-banner .banner ul img").eq(nexImg).css("position","absolute");
+// 						$(".c-banner .banner ul img").eq(jumpImg).css("position","relative");
+// 						
+// 						after.css("display","block");
+// 						after.stop().animate({"opacity":1},1000);
+// 						befor.stop().animate({"opacity":0},1000,function(){
+// 							befor.css("display","none");
+// 						});
+// 						nexImg=jumpImg;
+// 					}
+// 					$(this).css("background-color","black");
+// 					time =setInterval(intervalImg,3000);
+// 				});
+// 			});
+// 		}
+// 	})
+// }
+</script>
+<!--结束复制-->
+</html>
